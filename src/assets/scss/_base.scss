@@ -1,0 +1,65 @@
+html {
+  font-size: 62.5%;
+  font-family: $base-fonts;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  font-family: $font;
+  color: $black-light;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1;
+
+  background-color: $white;
+
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+
+  &.show-sidebar {
+    overflow: hidden;
+  }
+
+}
+
+footer {
+  margin-top: auto;
+}
+
+.hidden-title {
+  visibility: hidden;
+  height: 0;
+}
+
+.page-mask {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  height: 100%;
+  background-color: rgba(0,0,0, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transition: all .2s linear;
+
+
+  .show-sidebar & {
+    background-color: rgba(0,0,0,.8);
+    z-index: 3;
+  }
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+section {
+  padding: 7rem 0;
+}

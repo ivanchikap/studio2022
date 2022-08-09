@@ -1,0 +1,14 @@
+.header-top {
+  position: relative;
+  padding: 2.2rem 0;
+  background-color: $white;
+
+  .show-sidebar & {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    box-shadow: 2px 4px 8px rgba($white, .4);
+  }
+}

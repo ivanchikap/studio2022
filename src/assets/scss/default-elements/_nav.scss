@@ -1,0 +1,48 @@
+.nav {
+  $root: &;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin-left: 13rem;
+  overflow: hidden;
+
+  @include widescreen {
+    margin-left: 10rem;
+  }
+
+  @include laptop {
+    margin-left: 6rem;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  &--sidebar {
+    margin: 0 0 2rem 0;
+
+    @include tablet {
+      display: block;
+    }
+
+    #{$root} {
+      &__item {
+        display: block;
+        margin: 0 0 1rem 0;
+      }
+    }
+  }
+
+  &__item {
+    margin: 0 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.75;
+    @extend .text-overflow;
+    transition: color .2s linear;
+    
+    &:hover, &:focus, &.active {
+      color: $red;
+    }
+  }
+}

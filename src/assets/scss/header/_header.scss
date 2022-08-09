@@ -1,0 +1,34 @@
+.header {
+
+  &__container {
+    @extend .flex-between;
+    max-width: 175rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  &__left {
+    @extend .flex-start;
+    width: 70%;
+    overflow: hidden;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__right {
+    @extend .flex-end;
+    width: 30%;
+    overflow: hidden;
+
+    @include tablet {
+      width: auto;
+      padding-right: 4rem;
+    }
+
+    @include mobile {
+      padding-right: 3.4rem;
+    }
+  }
+}

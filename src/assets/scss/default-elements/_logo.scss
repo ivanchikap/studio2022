@@ -1,0 +1,14 @@
+.logo {
+  max-width: 13.2rem;
+  height: auto;
+  flex-shrink: 0;
+  transition: transform .2s linear;
+
+  &:hover {
+    transform: rotateZ(4deg);
+  }
+
+  &__img {
+    @extend .img-contain;
+  }
+}
