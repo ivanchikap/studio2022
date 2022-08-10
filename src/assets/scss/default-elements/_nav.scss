@@ -11,7 +11,7 @@
   }
 
   @include laptop {
-    margin-left: 6rem;
+    margin-left: 4rem;
   }
 
   @include tablet {
@@ -43,6 +43,10 @@
     
     &:hover, &:focus, &.active {
       color: $red;
+    }
+
+    @include laptop {
+      margin: 0 1rem;
     }
   }
 }

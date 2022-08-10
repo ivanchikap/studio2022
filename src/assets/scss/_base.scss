@@ -37,13 +37,13 @@ footer {
 }
 
 .page-mask {
+  position: fixed;
   cursor: pointer;
   display: block;
   width: 100%;
   margin-left: auto;
   height: 100%;
   background-color: rgba(0,0,0, 0);
-  position: absolute;
   top: 0;
   right: 0;
   z-index: -1;

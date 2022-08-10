@@ -1,0 +1,146 @@
+.sessions {
+  $root: &;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 10rem;
+    background-color: $gray-bg;
+    color: $black-light;
+    text-align: center;
+
+    @include widescreen {
+      padding: 8rem;
+    }
+
+    @include laptop {
+      padding: 5rem;
+    }
+
+    @include tablet {
+      padding: 3rem 2rem;
+    }
+
+    @include mobile-large {
+      width: 100%;
+      padding: 3rem 1.5rem;
+    }
+
+    &--individual {
+      background-color: $black-light;
+      color: $white;
+      
+      #{$root} {
+        &__item-title::before {
+          background-image: url("../images/individual-icon.png");
+        }
+        &__list-item {
+          border-bottom: 1px solid rgba($white, .2);
+          &::before {
+            color: rgba(#fefefe, .2);
+          }
+        }
+      }
+    }
+  }
+
+  &__item-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 8rem;
+    overflow: hidden;
+    max-width: 100%;
+
+    @include laptop {
+      margin-bottom: 6rem;
+    }
+
+    @include tablet {
+      margin-bottom: 4rem;
+    }
+
+    @include mobile {
+      font-size: 2.6rem;
+    }
+
+    &::before {
+      content: "";
+      background: url("../images/companies_icon.png") no-repeat center / contain;
+      height: 4rem;
+      width: 8rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__list-item {
+    position: relative;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid rgba($black-light, .15);
+
+    @include mobile {
+      padding: 1.5rem 2.5rem;
+    }
+
+    & + & {
+      margin-top: 4rem;
+
+      @include mobile {
+        margin-top: 2rem;
+      }
+    }
+
+    &::before {
+      content: '1';
+      width: 5rem;
+      text-align: right;
+      position: absolute;
+      left: -4.6rem;
+      bottom: -1.2rem;
+      color: rgba($black-light, .2) ;
+      font-family: inherit;
+      font-size: 8rem;
+      font-weight: 700;
+
+      @include tablet {
+        font-size: 7rem;
+      }
+
+      @include mobile {
+        font-size: 6rem;
+        bottom: -1rem;
+      }
+    }
+
+    &:nth-child(2)::before {
+      content: '2';
+    }
+
+    &:nth-child(3)::before {
+      content: '3';
+    }
+
+    &:nth-child(4)::before {
+      content: '4';
+    }
+  }
+
+  &__item-links {
+    margin-top: 10rem;
+
+    @include laptop {
+      margin-top: 8rem;
+    }
+
+    @include tablet {
+      margin-top: 6rem;
+    }
+  }
+}
