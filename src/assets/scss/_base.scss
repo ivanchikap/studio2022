@@ -12,7 +12,7 @@ body {
   color: $black-light;
   font-weight: 400;
   font-size: 1.8rem;
-  line-height: 1;
+  line-height: 1.2;
 
   background-color: $white;
 
@@ -54,12 +54,4 @@ footer {
     background-color: rgba(0,0,0,.8);
     z-index: 3;
   }
-}
-
-h2 {
-  font-size: 4rem;
-}
-
-section {
-  padding: 7rem 0;
 }

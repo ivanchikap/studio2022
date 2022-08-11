@@ -1,0 +1,141 @@
+.owl-carousel {
+  $root: &;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: relative;
+    cursor: pointer;
+    height: 38rem;
+    width: 100%;
+
+    &:hover {
+      #{$root} {
+        &__info {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:first-child {
+      margin-bottom: 3rem;
+
+      @include mobile-large {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    img {
+      @extend .img-cover;
+    }
+
+    @include laptop {
+      height: 30rem;
+    }
+
+    @include mobile {
+      height: 20rem;
+    }
+  }
+
+  &__info {
+    padding: 1.5rem 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 24%;
+    background-image: linear-gradient(to top, rgba($black, 0.7) 50%,  rgba($black, 0.2) 100%);
+    opacity: 0;
+    transition: opacity .2s linear;
+
+    @include mobile {
+      padding: 1rem;
+    }
+  }
+
+  &__info-text {
+    display: block;
+    margin-top: 1rem;
+    color: $white;
+
+    @include mobile {
+      margin-top: 0.4rem;
+      font-size: 1.4rem;
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__full-img {
+    height: 100%;
+    width: 100%;
+
+    img {
+      @extend .img-cover;
+      animation-name: rotateY;
+      animation-duration: .5s;
+    }
+  }
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+  width: calc(50% - 1.5rem);
+  height: 4rem;
+  background-clip: content-box;
+  color: transparent;
+  font-size: 0;
+  background: $gray-bg no-repeat center;
+  transition: background-color .2s linear;
+
+  @include mobile-large {
+    width: calc(50% - 0.75rem);
+  }
+
+  &:hover {
+    background-color: darken($gray-bg, 20%);
+  }
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  margin-right: 1.5rem;
+  background-image: url("../images/arrow-prev.png");
+
+  @include mobile-large {
+    margin-right: 0.75rem;
+  }
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  margin-left: 1.5rem;
+  background-image: url("../images/arrow-next.png");
+
+  @include mobile-large {
+    margin-left: 0.75rem;
+  }
+}
+
+.owl-nav {
+  margin-top: 2rem;
+
+  @include mobile-large {
+    margin-top: 1rem;
+  }
+}
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(-90deg);
+  } to {
+        transform: rotateY(0deg);
+  }
+}

@@ -1,97 +1,22 @@
----
-layout: default
-title: Studio
----
+document.addEventListener('DOMContentLoaded', () => {
+    const tabsList = document.getElementById('tabsList');
+    const buttons = tabsList.querySelectorAll('[data-type]');
 
 
-<div class="sessions" id="individual">
-    <div class="sessions__item sessions__item--individual">
-        <h3 class="sessions__item-title">Individual Sessions</h3>
-        <ul class="sessions__list">
-            <li class="sessions__list-item">Studio Sessions</li>
-            <li class="sessions__list-item">Outdoor Sessions</li>
-            <li class="sessions__list-item">In-Office Sessions</li>
-        </ul>
-        <!--/sessions__list-->
-        <div class="sessions__item-links">
-            <a  class="btn btn--default btn--red" href="#">See More</a>
-        </div>
-    </div>
-    <!--/sessions__item-->
-    <div class="sessions__item">
-        <h3 class="sessions__item-title">Companies Sessions</h3>
-        <ul class="sessions__list">
-            <li class="sessions__list-item">Group On-Sites</li>
-            <li class="sessions__list-item">Corporate Accounts</li>
-        </ul>
-        <!--/sessions__list-->
-        <div class="sessions__item-links">
-            <a  class="btn btn--default btn--red" href="#">See More</a>
-        </div>
-    </div>
-    <!--/sessions__item-->
-</div>
-<!--/individual-->
 
-<div class="map">
-    <div class="container map__container">
-        <div class="map__content">
-            <h3 class="map__title">Studio Near Me</h3>
-            <p class="map__text">Search for your professional by zip code:</p>
-            <form action="/" class="map__form">
-                <label class="map__label">
-                    <input class="map__input" type="text">
-                </label>
-                <button type="submit" class="btn btn--default btn--red">Search</button>
-            </form>
-        </div>
-        <!--/map__content-->
-    </div>
+    buttons.forEach((button, i, buttons) => {
+        button.addEventListener('click', (e) => {
+            buttons.forEach((button) => {
+                button.classList.remove('active');
+            });
+            const tabsContent = document.getElementById('tabsContent');
+            button.classList.add('active');
+        })
+    })
 
-    <iframe class="map__map" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d324838.74833241705!2d30.71931566391023!3d50.500629320702465!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1660194174394!5m2!1sru!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-<!--/map-->
-
-<section class="services section" id="services">
-    <div class="container">
-        <header class="section__header">
-            <h2 class="section__title">Our professional services</h2>
-        </header>
-        <!--/section__header-->
-        <div class="tabs">
-           <ul class="tabs__list" id="tabsList">
-               <li class="tabs__list-item active" data-type="all">All</li>
-               <li class="tabs__list-item" data-type="modeling">Modeling</li>
-               <li class="tabs__list-item" data-type="acting">Acting</li>
-               <li class="tabs__list-item" data-type="corporate">Corporate</li>
-               <li class="tabs__list-item" data-type="business">Business</li>
-               <li class="tabs__list-item" data-type="professional">Professional</li>
-               <li class="tabs__list-item" data-type="group">Group</li>
-               <li class="tabs__list-item" data-type="company">Company</li>
-               <li class="tabs__list-item" data-type="officer">Officer</li>
-           </ul>
-            <!--/tabs__list-->
-
-            <div class="tabs__content">
-                <div class="tabs__col">
-                    <div class="owl-carousel" id="tabsContent">
-                        <div class="owl-carousel__item" data-person-type="modeling">
-                            <div class="owl-carousel__img">
-                                <img src="assets/images/services/serv1.jpg" alt="serv1">
-                                <div class="owl-carousel__info">
-                                    <a class="btn btn--red btn--smallest" href="#">Company</a>
-                                    <a href="#" class="owl-carousel__info-text">Check Service &#8594;</a>
-                                </div>
-                            </div>
-                            <div class="owl-carousel__img">
-                                <img src="assets/images/services/serv2.jpg" alt="serv2">
-                                <div class="owl-carousel__info">
-                                    <a class="btn btn--red btn--smallest" href="#">Company</a>
-                                    <a href="#" class="owl-carousel__info-text">Check Service &#8594;</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/owl-carousel__item-->
+    function renderItems() {
+        return `
+                       
                         <div class="owl-carousel__item" data-person-type="modeling">
                             <div class="owl-carousel__img">
                                 <img src="assets/images/services/serv1.jpg" alt="serv1">
@@ -347,43 +272,8 @@ title: Studio
                             </div>
                         </div>
                         <!--/owl-carousel__item-->
-                    </div>
-                </div>
-                <!--/tabs__col-->
-                <div class="tabs__col">
-                    <div class="owl-carousel__full-img" id="fullImg">
-
-                    </div>
-                </div>
-                <!--/tabs__col-->
-            </div>
-            <!--/tabs__content-->
-        </div>
-        <!--/tabs-->
-    </div>
-</section>
-<!--/services-->
+        `
+    }
+});
 
 
-
-<section class="about section" id="about">
-    <div class="container">
-        <h2>Clients love us </h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum cumque deleniti deserunt dignissimos eaque eligendi et eveniet facere fuga, id natus quae quasi quidem quo totam velit? Ex, nulla!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum cumque deleniti deserunt dignissimos eaque eligendi et eveniet facere fuga, id natus quae quasi quidem quo totam velit? Ex, nulla!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum cumque deleniti deserunt dignissimos eaque eligendi et eveniet facere fuga, id natus quae quasi quidem quo totam velit? Ex, nulla!</p>
-    </div>
-</section>
-<!--/about-->
-
-
-
-<section class="blog section" id="blog">
-    <div class="container">
-        <h2>Our Blog </h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum cumque deleniti deserunt dignissimos eaque eligendi et eveniet facere fuga, id natus quae quasi quidem quo totam velit? Ex, nulla!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum cumque deleniti deserunt dignissimos eaque eligendi et eveniet facere fuga, id natus quae quasi quidem quo totam velit? Ex, nulla!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum cumque deleniti deserunt dignissimos eaque eligendi et eveniet facere fuga, id natus quae quasi quidem quo totam velit? Ex, nulla!</p>
-    </div>
-</section>
-<!--/blog-->
