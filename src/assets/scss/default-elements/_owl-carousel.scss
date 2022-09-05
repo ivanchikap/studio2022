@@ -13,7 +13,7 @@
   &__img {
     position: relative;
     cursor: pointer;
-    height: 38rem;
+    height: 32rem;
     width: 100%;
 
     &:hover {
@@ -37,7 +37,7 @@
     }
 
     @include laptop {
-      height: 30rem;
+      height: 28rem;
     }
 
     @include mobile {

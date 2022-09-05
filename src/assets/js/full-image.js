@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     //render first Image
-    setTimeout(function () {
+
+    function fullImage() {
         const images = document.querySelectorAll('.owl-carousel__img img');
         const parent = document.getElementById('fullImg');
         renderImage(images[0].src, images[0].alt, parent);
@@ -22,5 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img.alt = alt;
             parent.appendChild(img);
         }
-    }, 500);
+    }
+
+    setTimeout(fullImage, 500)
 });
