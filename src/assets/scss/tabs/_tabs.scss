@@ -51,6 +51,7 @@
 
   &__col {
     width: 50%;
+    max-height: 73rem;
 
     @include tablet {
       width: 100%;

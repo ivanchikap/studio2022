@@ -1,0 +1,79 @@
+.card {
+  color: #fff;
+  max-width: 47rem;
+  margin: 0 auto;
+
+  &__img {
+    height: 49rem;
+    width: 100%;
+
+    @include widescreen {
+      height: 44rem;
+    }
+
+    @include laptop {
+      height: 40rem;
+    }
+
+    @include mobile-large {
+      height: 49rem;
+    }
+
+    @include mobile {
+      height: 40rem;
+    }
+
+    img {
+      @extend .img-cover;
+      object-position: center top;
+    }
+  }
+
+  &__author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.4rem 0;
+  }
+
+  &__author-name {
+    max-width: 80%;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.96px;
+    @extend .text-overflow;
+  }
+
+  &__author-rating {
+    color: $red;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    position: relative;
+    max-width: 100%;
+    padding: 0 4.2rem;
+    margin: 2rem auto;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.7;
+
+    @include laptop {
+      margin: 1rem auto;
+      padding: 0 2rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -2.4rem;
+      width: 6.8rem;
+      height: 5.1rem;
+      background: url("../images/about/lapki-icon.png") no-repeat center / contain;
+    }
+  }
+}

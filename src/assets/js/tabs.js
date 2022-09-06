@@ -311,9 +311,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             tabsContent.insertAdjacentHTML('afterbegin', template);
 
-            $('.owl-carousel').trigger('destroy.owl.carousel');
+            $('#tabsContent').trigger('destroy.owl.carousel');
 
-            $(".owl-carousel").owlCarousel(
+            $("#tabsContent").owlCarousel(
                 {
                     margin: 30,
                     items: 2,
@@ -342,9 +342,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 tabsContent.insertAdjacentHTML('afterbegin', template);
 
-                $('.owl-carousel').trigger('destroy.owl.carousel');
+                $('#tabsContent').trigger('destroy.owl.carousel');
 
-                $(".owl-carousel").owlCarousel(
+                $("#tabsContent").owlCarousel(
                     {
                         margin: 30,
                         items: 2,

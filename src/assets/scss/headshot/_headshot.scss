@@ -1,0 +1,129 @@
+.headshot {
+  padding: 8rem 0 10rem;
+  background-color: $gray-bg;
+
+  @include laptop {
+    padding: 6rem 0 8rem;
+  }
+
+  @include tablet {
+    padding: 5rem 0 7rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__description {
+    width: 40%;
+    flex: 0 0 40%;
+
+    @include laptop {
+      width: 44%;
+      flex: 0 0 44%;
+    }
+
+    @include tablet {
+      width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+
+  .title {
+    min-height: 10.6rem;
+    margin-bottom: 3rem;
+
+    @include laptop {
+      min-height: 8rem;
+    }
+
+    @include tablet {
+      min-height: auto;
+    }
+  }
+
+  &__text {
+    line-height: 1.8;
+  }
+
+  &__services {
+    position: relative;
+    max-width: 68%;
+    padding: 5rem 8rem;
+    margin-left: 11rem;
+    background-color: $black-light;
+    color: $white;
+
+    @include laptop {
+      max-width: 78%;
+      margin-top: 3rem;
+      padding: 4rem 7rem;
+    }
+
+    @include tablet {
+      max-width: 100%;
+      margin-left: 6rem;
+      padding: 3rem 5rem;
+    }
+
+    @include mobile-large {
+      padding: 2rem 3rem;
+    }
+
+    @include mobile {
+      margin-left: 1.5rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -11rem;
+      top: -9rem;
+      width: 63px;
+      height: 139px;
+      background: url("../images/tips/arrow-icon.png") no-repeat center / contain;
+
+      @include tablet {
+        left: -7rem;
+      }
+
+      @include mobile {
+        left: -2rem;
+        top: -1rem;
+        width: 3rem;
+        height: 7rem;
+      }
+    }
+  }
+
+  &__services-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__services-text {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    font-weight: 300;
+
+    @include mobile {
+      line-height: 1.4;
+    }
+
+    p + p {
+      margin-top: 3rem;
+
+      @include tablet {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

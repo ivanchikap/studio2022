@@ -3,9 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navSidebar = document.getElementById('sidebarLinks');
     const links = nav.querySelectorAll(".nav__item");
     const sidebarLinks = navSidebar.querySelectorAll(".nav__item");
+    const footerLinks = document.querySelectorAll("#footerLinks .footer__list-link");
 
     onAnchorClick(links);
     onAnchorClick(sidebarLinks);
+    onAnchorClick(footerLinks);
 
     function onAnchorClick(links) {
        links.forEach((link) => {

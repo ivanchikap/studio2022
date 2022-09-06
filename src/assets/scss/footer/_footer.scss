@@ -1,0 +1,151 @@
+.footer {
+  $root: &;
+  background-color: $black-light;
+  color: $white;
+
+  &__top {
+    padding: 9rem 0 6rem 0;
+  }
+
+  &__title {
+    color: #626262;
+    font-size: 2.1rem;
+    margin-bottom: 2.8rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &--left {
+      #{$root} {
+        &__list-link {
+          border-bottom: 1px solid #434343;
+          transition: border-color .2s linear;
+          
+          &:hover {
+            text-decoration: none;
+            border-color: $white;
+          }
+        }
+      }
+    }
+
+    &--resources {
+      #{$root} {
+        &__list-item {
+          display: flex;
+          align-items: center;
+        }
+
+        &__list-arrow {
+          color: #626262;
+          margin-right: 1.2rem;
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+
+  &__list-item {
+    font-size: 1.6rem;
+    color: $white;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
+
+    & + & {
+      margin-top: 1.8rem;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__list-link {
+    @extend .text-overflow;
+  }
+
+  .row + .row {
+    margin-top: 7rem;
+    
+    .col-2 {
+      text-align: right;
+    }
+  }
+  
+  .col-md-6--right {
+    @include tablet {
+      text-align: right;
+    }
+  }
+
+  .col-sm-6 {
+    margin-top: 3rem;
+  }
+
+  .col-md-8 {
+    @include tablet {
+      margin: 4rem auto 0 auto;
+    }
+  }
+
+  &__maplink {
+    display: flex;
+    align-items: baseline;
+    color: $white;
+    font-size: 1.6rem;
+    line-height: 1.8;
+
+    span:hover {
+      text-decoration: underline;
+    }
+    
+    i {
+      margin-right: 1.4rem;
+
+      @include tablet {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+
+  &__contact-link {
+    font-size: 3rem;
+    line-height: 1.2;
+    @extend .text-overflow;
+
+    @include tablet {
+      font-size: 2.4rem;
+    }
+
+    & + & {
+      margin-top: 1rem;
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__bottom {
+    padding: 2.4rem 0;
+    color: rgba($white, .2);
+    font-size: 1.8rem;
+    text-align: center;
+    border-top: 1px solid #383838;
+
+    .container {
+      position: relative;
+    }
+  }
+
+  &__policy {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,29 @@
+.about {
+  background-color: $black-light;
+  color: $white;
+
+  .owl-dots {
+    text-align: center;
+    margin-top: 5rem;
+
+    @include laptop {
+      margin-top: 3rem;
+    }
+  }
+
+  .owl-dots button {
+    width: 1rem;
+    height: 1rem;
+    background-color: #cfcfcf;
+    border-radius: 50%;
+
+    & + button {
+      margin-left: 2rem;
+    }
+
+    &.active {
+      background-color: transparent;
+      border: 2px solid $red;
+    }
+  }
+}

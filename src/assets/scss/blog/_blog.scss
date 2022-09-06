@@ -1,0 +1,30 @@
+.blog {
+  .col-4 {
+    @include tablet {
+      &:not(:nth-child(-n + 2)) {
+        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @include mobile-large {
+      &:not(:nth-child(-n + 1)) {
+        margin-top: 3rem;
+      }
+    }
+  }
+  
+  &__footer {
+    text-align: center;
+    margin-top: 6rem;
+
+    @include mobile-large {
+      margin-top: 4rem;
+    }
+
+    @include mobile {
+      margin-top: 3rem;
+    }
+  }
+}

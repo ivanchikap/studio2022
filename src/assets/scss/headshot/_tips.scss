@@ -1,0 +1,107 @@
+.tips {
+  width: 49%;
+  flex: 0 0 49%;
+  padding-left: 3rem;
+
+  @include laptop {
+    width: 56%;
+    flex: 0 0 56%;
+  }
+
+  @include tablet {
+    width: 100%;
+    flex: 0 0 100%;
+    margin-top: 3rem;
+    padding-left: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46%;
+    padding: 0 .2rem 2rem 1rem;
+    border-bottom: 1px solid rgba($black-light, .2);
+    overflow: hidden;
+
+    @include laptop {
+      width: 48%;
+      padding: 0 0 1rem 1rem;
+    }
+
+    @include mobile-large {
+      padding: 0 0 1rem 0;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &:last-child {
+      margin-left: auto;
+    }
+
+    &:not(:nth-child(-n + 2)) {
+      margin-top: 5rem;
+
+      @include laptop {
+        margin-top: 3rem;
+      }
+
+      @include mobile-large {
+        margin-top: 2rem;
+      }
+    }
+
+    &:not(:nth-child(-n + 1)) {
+      @include mobile {
+        margin-top: 2rem;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 7rem;
+      height: 6.2rem;
+      margin-right: 1.6rem;
+      flex-shrink: 0;
+
+      @include laptop {
+        margin-right: 1rem;
+      }
+    }
+
+    &--camera::before {
+      background: url("../images/tips/camera-icon.png") no-repeat center / contain;
+    }
+
+    &--mirror::before {
+      background: url("../images/tips/mirror-icon.png") no-repeat center / contain;
+    }
+
+    &--eyes::before {
+      background: url("../images/tips/eyes-icon.png") no-repeat center / contain;
+    }
+
+    &--studio::before {
+      background: url("../images/tips/studio-icon.png") no-repeat center / contain;
+    }
+
+    &--tshirt::before {
+      background: url("../images/tips/tshirt-icon.png") no-repeat center / contain;
+    }
+  }
+
+  &__item-text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
