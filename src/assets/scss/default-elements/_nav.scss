@@ -7,11 +7,11 @@
   overflow: hidden;
 
   @include widescreen {
-    margin-left: 10rem;
+    margin-left: 7rem;
   }
 
   @include laptop {
-    margin-left: 4rem;
+    margin-left: 3rem;
   }
 
   @include tablet {

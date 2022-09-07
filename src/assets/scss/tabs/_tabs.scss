@@ -24,6 +24,7 @@
     text-align: center;
     margin: 0 2rem;
     cursor: pointer;
+    user-select: none;
     border-bottom: 2px solid transparent;
 
     @include laptop {

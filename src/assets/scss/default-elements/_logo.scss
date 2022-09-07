@@ -4,6 +4,10 @@
   flex-shrink: 0;
   transition: transform .2s linear;
 
+  @include mobile {
+    max-width: 12rem;
+  }
+
   &:hover {
     transform: rotateZ(4deg);
   }

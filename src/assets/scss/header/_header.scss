@@ -9,7 +9,7 @@
 
   &__left {
     @extend .flex-start;
-    width: 70%;
+    width: 68%;
     overflow: hidden;
 
     @include tablet {
@@ -19,7 +19,7 @@
 
   &__right {
     @extend .flex-end;
-    width: 30%;
+    width: 32%;
     overflow: hidden;
 
     @include tablet {
